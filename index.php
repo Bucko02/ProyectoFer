@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Mágico - Landing Page</title>
+    <link href="estilosweb.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">✨ Osito Dulce Abrazo</div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#magia">Productos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content unreveal">
+            <h1>¡Más que un peluche,Un abrazo seguro! 🌟</h1>
+            <p>Descubre un universo lleno de seguridad,diversión y abrazos hechos a tu medida.</p>
+            <button class="btn-principal">¡Empezar Aventura!</button>
+        </div>
+        <div class="hero-image unreveal delay-1">
+            <div class="circulo-magico"><img src="public/img/logo.jpg"></div>
+        </div>
+    </section>
+
+<section id="magia" class="features">
+    <h2 class="unreveal">¿Qué encontrarás aquí? 🌸</h2>
+    
+    <div class="cards-container">
+        <div class="card unreveal delay-1">
+            <div class="icon" style="height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                <img src="public/img/oso1.png" alt="Oso con cobija" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+            </div>
+            <h3>Osito dulce abrazo</h3>
+            <p>Oso de peluche con manta de apego integrado y sistema de calefacción </p>
+            <h4>Por solo $1,100.00</h4>
+        </div>
+        
+        <div class="card unreveal delay-1">
+            <div class="icon" style="height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                <img src="public/img/osoPer.jpg" alt="Oso veloz" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+            </div>
+            <h3>Personaliza tu osito dulce abrazo</h3>
+            <p>Elige tu prenda de tu preferencia, envianosla y te la devolvemos personalizada</p>
+        </div>
+        
+        <div class="card unreveal delay-1">
+            <div class="icon" style="height: 250px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                <img src="public/img/instrucciones.jpg" alt="Oso con corazón" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+            </div>
+            <h3>Hecho con Amor</h3>
+            <p>Cada rincón está pensado para inspirar la creatividad y la sonrisa.</p>
+        </div>
+    </div>
+</section>
+
+
+    <section id="contacto" class="contacto">
+        <div class="form-container unreveal">
+            <h2>¿Quieres personalizar tu oso? ¡Ponte en contacto con nosotros!💌</h2>
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+                <input type="text" name="nombre" placeholder="Escribe tu nombre" required>
+                <input type="email" name="correo" placeholder="Tu correo electrónico" required>
+                <button type="submit" class="btn-submit">Solicitar Personalización ✨</button>
+            </form>
+            
+            <?php
+            // Procesamiento básico del formulario en PHP
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $nombre = htmlspecialchars($_POST['nombre']);
+                echo "<p class='success-msg'>¡Felicidades $nombre, ya eres parte del club! 🌈</p>";
+            }
+            ?>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

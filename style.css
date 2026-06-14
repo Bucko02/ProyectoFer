@@ -1,0 +1,265 @@
+/* Variables de colores llamativos */
+:root {
+    --rosa-brillante: #ff4081;
+    --rosa-pastel: #fec0ce;
+    --morado-magico: #7c4dff;
+    --celeste-pudin: #00e5ff;
+    --blanco: #ffffff;
+    --fuente-titulo: 'Fredoka One', cursive;
+    --fuente-base: 'Quicksand', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--var-fuente-base);
+    background: linear-gradient(135deg, #ffe5ec 0%, #f0e6ff 100%);
+    color: #333;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(255, 64, 129, 0.1);
+}
+
+header .logo {
+    font-family: var(--fuente-titulo);
+    font-size: 1.5rem;
+    color: var(--rosa-brillante);
+    text-shadow: 2px 2px #fff;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--morado-magico);
+    font-weight: 700;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--rosa-brillante);
+}
+
+/* Secciones Generales */
+section {
+    padding: 100px 20px;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(254,192,206,0.4) 100%);
+}
+
+.hero-content {
+    max-width: 500px;
+    text-align: left;
+}
+
+.hero h1 {
+    font-family: var(--fuente-titulo);
+    font-size: 3.5rem;
+    color: var(--morado-magico);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.btn-principal {
+    padding: 15px 35px;
+    font-family: var(--fuente-titulo);
+    font-size: 1.2rem;
+    color: white;
+    background: linear-gradient(45deg, var(--rosa-brillante), var(--morado-magico));
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(255, 64, 129, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-principal:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 64, 129, 0.6);
+}
+
+/* 1. Controla el tamaño del círculo contenedor */
+.circulo-magico {
+    width: 250px;  /* Cambia este valor al tamaño que desees para el círculo (ej. 200px, 300px) */
+    height: 250px; /* Debe ser igual al width para que siga siendo un círculo perfecto */
+    background: var(--blanco);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    animation: flotar 4s ease-in-out infinite;
+    
+    /* Muy importante: evita que si la imagen es gigante se salga del círculo antes de cargar el CSS de la imagen */
+    overflow: hidden; 
+    padding: 20px; /* Espacio interno para que el peluche no toque los bordes del círculo (efecto marco) */
+}
+
+/* 2. Controla el tamaño de la imagen dentro del círculo */
+.circulo-magico img {
+    width: 100%;
+    height: 100%;
+    /* 'contain' hace que la imagen se業務用 escale por completo dentro del espacio sin recortarse */
+    object-fit: contain; 
+}
+
+/* Animación infinita de flotación */
+@keyframes flotar {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* Características / Cards */
+.features h2 {
+    font-family: var(--fuente-titulo);
+    font-size: 2.5rem;
+    color: var(--rosa-brillante);
+    margin-bottom: 50px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: var(--blanco);
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(124, 77, 255, 0.05);
+    border: 2px solid var(--rosa-pastel);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--rosa-brillante);
+}
+
+.card .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* Formulario */
+.contacto .form-container {
+    background: var(--blanco);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    max-width: 500px;
+    width: 100%;
+}
+
+.contacto h2 {
+    font-family: var(--fuente-titulo);
+    color: var(--morado-magico);
+    margin-bottom: 25px;
+}
+
+.contacto input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    outline: none;
+    font-family: var(--fuente-base);
+}
+
+.contacto input:focus {
+    border-color: var(--rosa-brillante);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    background: var(--rosa-brillante);
+    color: white;
+    font-family: var(--fuente-titulo);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background: var(--morado-magico);
+}
+
+.success-msg {
+    margin-top: 15px;
+    color: #2ec4b6;
+    font-weight: bold;
+}
+
+/* =========================================
+   SISTEMA DE ANIMACIÓN AL HACER SCROLL
+   ========================================= */
+
+/* Estado inicial (Oculto/Preparado) */
+.unreveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Variaciones de dirección */
+.unreveal.view-left {
+    transform: translateX(-100px);
+}
+
+.unreveal.view-right {
+    transform: translateX(100px);
+}
+
+/* Estado activo (Cuando se hace scroll y aparece en pantalla) */
+.revealed {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* Delays para efectos escalonados */
+.delay-1 {
+    transition-delay: 0.2s;
+}
+
